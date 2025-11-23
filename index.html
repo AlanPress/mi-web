@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investigación de Vulnerabilidades Web</title>
+<link rel="stylesheet" href="stilos.css">
+
+</head>
+<body>
+
+<header>
+    <h1>Investigación de Vulnerabilidades Web</h1>
+    <p>Inyección en base de datos · XSS · Fallos de validación · Manejo inseguro de sesiones</p>
+    <a href="#contenido" class="btn-scroll">Ver contenido</a>
+</header>
+
+<div class="container" id="contenido">
+
+    <!-- Inyección SQL -->
+    <div class="card">
+        <h2>1. Inyección a Base de Datos (SQL Injection)</h2>
+        <p>
+            La inyección SQL ocurre cuando un atacante inserta código malicioso dentro de una consulta SQL.
+            Esto sucede por falta de validación en los parámetros enviados a la base de datos.
+        </p>
+        <strong>Consecuencias:</strong>
+        <ul>
+            <li>Robo o destrucción de datos.</li>
+            <li>Acceso no autorizado.</li>
+            <li>Control total del servidor.</li>
+        </ul>
+        <strong>Ejemplo de ataque:</strong>
+        <pre style="background:#0c0f14; padding:10px; border-radius:5px;">
+' OR 1=1 --
+        </pre>
+    </div>
+
+    <!-- XSS -->
+    <div class="card">
+        <h2>2. Cross-Site Scripting (XSS)</h2>
+        <p>
+            XSS permite a un atacante ejecutar JavaScript malicioso dentro del navegador de otros usuarios.
+            Esto ocurre cuando una aplicación muestra datos sin sanitizarlos.
+        </p>
+        <strong>Consecuencias:</strong>
+        <ul>
+            <li>Robo de cookies y sesiones.</li>
+            <li>Redirecciones maliciosas.</li>
+            <li>Modificación del contenido mostrado al usuario.</li>
+        </ul>
+        <strong>Ejemplo de ataque:</strong>
+        <pre style="background:#0c0f14; padding:10px; border-radius:5px;">
+&lt;script&gt;alert('XSS')&lt;/script&gt;
+        </pre>
+    </div>
+
+    <!-- Fallos de Validación -->
+    <div class="card">
+        <h2>3. Fallos de Validación</h2>
+        <p>
+            Los fallos de validación suceden cuando los datos ingresados por el usuario no son verificados antes de
+            procesarse. Esto puede causar vulnerabilidades como inyección, XSS o corrupción de datos.
+        </p>
+        <strong>Errores comunes:</strong>
+        <ul>
+            <li>No validar tamaño, tipo o formato de datos.</li>
+            <li>Validar solo en el lado del cliente.</li>
+            <li>Permitir caracteres especiales sin control.</li>
+        </ul>
+    </div>
+
+    <!-- Manejo inseguro de sesiones -->
+    <div class="card">
+        <h2>4. Manejo Inseguro de Sesiones</h2>
+        <p>
+            Un mal manejo de sesiones puede permitir que un atacante suplante la identidad de un usuario.
+        </p>
+        <strong>Problemas comunes:</strong>
+        <ul>
+            <li>IDs de sesión predecibles.</li>
+            <li>Sesiones sin expiración.</li>
+            <li>No usar cookies seguras (HttpOnly, Secure).</li>
+        </ul>
+        <strong>Riesgos:</strong>
+        <ul>
+            <li>Secuestro de sesión (Session Hijacking).</li>
+            <li>Robo de información sensible.</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+   Samuel Vargas Baez — 2025
+</footer>
+
+<script>
+// Animación suave al hacer clic en el botón
+document.querySelector(".btn-scroll").addEventListener("click", function(e){
+    e.preventDefault();
+    document.querySelector("#contenido").scrollIntoView({ behavior: "smooth" });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #0d1117;
+        color: #e6edf3;
+    }
+
+    header {
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #1f2937, #111827);
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+        animation: slideUp 1.5s ease;
+    }
+
+    .card {
+        background: #161b22;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(0, 180, 255, 0.3);
+    }
+
+    h2 {
+        color: #58a6ff;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+        from {transform: translateY(30px); opacity: 0;}
+        to {transform: translateY(0); opacity: 1;}
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+        color: #8b949e;
+    }
+
+    /* Botón animado */
+    .btn-scroll {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 25px;
+        background: #238636;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 1.1em;
+        transition: background 0.3s;
+        animation: pulse 2s infinite;
+    }
+
+    .btn-scroll:hover {
+        background: #2ea043;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
